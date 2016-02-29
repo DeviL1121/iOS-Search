@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="606-g2-uxK">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--搜索-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入搜索关键字" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vSH-Ct-L0F">
+                                <rect key="frame" x="20" y="95" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLM-dt-VdO">
+                                <rect key="frame" x="187" y="254" width="226" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="1LG-0s-RkJ"/>
+                                    <constraint firstAttribute="height" constant="91" id="aFo-3R-Cww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ICf-YO-wDT"/>
+                                    <segue destination="jl5-qM-hqY" kind="show" id="ZAA-wP-3PX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vSH-Ct-L0F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="41n-s8-h8G"/>
+                            <constraint firstItem="vSH-Ct-L0F" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="K3b-5J-p4X"/>
+                            <constraint firstItem="TLM-dt-VdO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KNs-4P-wNN"/>
+                            <constraint firstItem="vSH-Ct-L0F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="S9n-Rj-rLD"/>
+                            <constraint firstItem="TLM-dt-VdO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qnj-4K-PcK"/>
+                        </constraints>
+                        <connections>
+                            <action selector="backgroundTap:" destination="BYZ-38-t0r" eventType="touchDown" id="xfN-wA-edb"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="搜索" id="dgM-jM-uEi"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="vSH-Ct-L0F" id="ibv-Aa-U8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="159"/>
+        </scene>
+        <!--Result Table View Controller-->
+        <scene sceneID="e8q-T3-LNJ">
+            <objects>
+                <tableViewController id="jl5-qM-hqY" customClass="ResultTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Aj-3y-OtM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellForBook" rowHeight="57" id="Aum-hs-m7F">
+                                <rect key="frame" x="0.0" y="92" width="600" height="57"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aum-hs-m7F" id="v3a-yb-Bbe">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="56.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3bK-cq-5sF" kind="show" id="Vcp-kG-jnX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jl5-qM-hqY" id="7Zf-M0-dJb"/>
+                            <outlet property="delegate" destination="jl5-qM-hqY" id="QQU-JR-8hm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJA-06-fMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="156"/>
+        </scene>
+        <!--Book Info View Controller-->
+        <scene sceneID="gtR-cE-bbW">
+            <objects>
+                <viewController id="3bK-cq-5sF" customClass="BookInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qDe-ZT-txJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7x0-rw-qRh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DQw-MQ-lfa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrc-2H-MKh">
+                                <rect key="frame" x="20" y="72" width="560" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="anY-BU-6go"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaQ-9F-bEy">
+                                <rect key="frame" x="20" y="127" width="560" height="453"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vrc-2H-MKh" firstAttribute="leading" secondItem="jaQ-9F-bEy" secondAttribute="leading" id="J8h-Kg-Q7C"/>
+                            <constraint firstItem="Vrc-2H-MKh" firstAttribute="top" secondItem="qDe-ZT-txJ" secondAttribute="bottom" constant="8" symbolic="YES" id="MXE-5L-GUm"/>
+                            <constraint firstItem="jaQ-9F-bEy" firstAttribute="top" secondItem="Vrc-2H-MKh" secondAttribute="bottom" constant="8" symbolic="YES" id="TCJ-Jw-Ca6"/>
+                            <constraint firstItem="jaQ-9F-bEy" firstAttribute="leading" secondItem="DQw-MQ-lfa" secondAttribute="leadingMargin" id="WAg-ZK-xJd"/>
+                            <constraint firstItem="jaQ-9F-bEy" firstAttribute="trailing" secondItem="DQw-MQ-lfa" secondAttribute="trailingMargin" id="ZTh-20-sOJ"/>
+                            <constraint firstItem="Vrc-2H-MKh" firstAttribute="trailing" secondItem="jaQ-9F-bEy" secondAttribute="trailing" id="hTE-J8-J9I"/>
+                            <constraint firstAttribute="bottom" secondItem="jaQ-9F-bEy" secondAttribute="bottom" constant="20" symbolic="YES" id="wfS-eF-yAT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookSummary" destination="jaQ-9F-bEy" id="LEN-kG-rv5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E78-aQ-cSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2136" y="159"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Hi-XK-kT5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="606-g2-uxK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f7a-km-vm6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AD0-nd-2AY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fI2-0R-o44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="159"/>
+        </scene>
+    </scenes>
+</document>
